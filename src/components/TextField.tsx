@@ -1,9 +1,23 @@
 import React from 'react'
 
-const TextField = () => {
-  return (
-    <div>TextField</div>
-  )
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+interface Props {
+    text: string;
+    ok?: boolean,
+    i?: number, 
+    fn?: (bob: string) => string;
+    person: Person
 }
 
+const TextField: React.FC <Props> = ({}) => {
+  return (
+    <div>
+        <input />
+    </div>
+  )
+}
+ 
 export default TextField
