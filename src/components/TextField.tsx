@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
 interface Person {
     firstname: string;
@@ -10,12 +10,22 @@ interface Props {
     i?: number, 
     fn?: (bob: string) => string;
     person: Person
+    handleChange: () => React.ChangeEventHandler<HTMLInputElement> 
+    
 }
 
-const TextField: React.FC <Props> = ({}) => {
-  return (
-    <div>
-        <input />
+interface TextNode {
+    text: string
+}
+
+const TextField: React.FC <Props> = ({handleChange}) => {
+    const [count, setCount] = useState<TextNode>({text: "hello"})
+    const inputRef = useRef<HTMLInputElement>(null);
+    const divRef = useRef<HTMLDivElement>(null);
+  
+    return (
+    <div  ref={divRef}>
+        <input ref={inputRef} onChange={handleChange} />
     </div>
   )
 }

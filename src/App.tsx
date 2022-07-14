@@ -4,7 +4,8 @@ import TextField from "./components/TextField";
 
 const App: React.FC  = () => {
   return <div>
-    <TextField text="hello" person={{firstname: "bob", lastname: "yolo"}} />
+    <TextField text="hello" person={{firstname: "bob", lastname: "yolo"}} 
+    />
   </div>
   
 }
